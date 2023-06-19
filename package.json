@@ -1,0 +1,15 @@
+{
+  "name": "goit-node-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sashazakatov/goit-node-01.git",
+  "author": "Olexander Zakatov <sashazakatov17@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
