@@ -1,7 +1,6 @@
-// const argv = require('yargs').argv;
+const argv = require('yargs').argv;
 const { getListContact, getContactById, removeContact, addContact } = require('./contacts');
 
-// TODO: рефакторить
 const invokeAction = async({ action, id, name, email, phone }) => {
   switch (action) {
     case 'list':
@@ -25,7 +24,4 @@ const invokeAction = async({ action, id, name, email, phone }) => {
   }
 }
 
-invokeAction({action:"add", name:"Sasha Zakatov", email:"sashaZakatov@gmail.com", phone:"3806964989"});
-
-
-// invokeAction(argv)
+invokeAction(argv);

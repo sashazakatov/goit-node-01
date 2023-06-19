@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "nodemon": "^2.0.22",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "yargs": "^17.7.2"
   }
 }
