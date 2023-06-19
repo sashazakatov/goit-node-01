@@ -4,15 +4,19 @@ const shortid = require('shortid');
 
 const contactsPath = join(__dirname, '/db/contacts.json');
 
+
+// destroys the array of contacts
 const getListContact = async() => {
     const contacts = await fs.readFile(contactsPath, 'utf-8');
     return JSON.parse(contacts);
 }
+// returns object by id
 const getContactById = async(id) => {
     const contacts = await getListContact();
     const oneContact = contacts.find((contact) => contact.id === id);
     return oneContact || null;
 }
+// deletes and returns a contact by id
 const removeContact = async(id) => {
     const contacts = await getListContact();
     const indexContact = contacts.findIndex((contact) => contact.id === id);
@@ -23,6 +27,7 @@ const removeContact = async(id) => {
     await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 1));
     return contact;
 }
+// adds a contact to the array
 const addContact = async(data) => {
     const contacts = await getListContact();
     const contact = {
@@ -33,7 +38,6 @@ const addContact = async(data) => {
     await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 1));
     return contact;
 }
-
 module.exports = {
     getListContact,
     getContactById,
